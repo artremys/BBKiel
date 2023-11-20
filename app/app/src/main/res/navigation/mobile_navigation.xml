@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_home">
+    <fragment
+        android:id="@+id/navigation_favourites"
+        android:name="com.example.bbkiel.ui.favourites.FavouritesFragment"
+        android:label="@string/title_favourites"
+        tools:layout="@layout/fragment_favourites">
+        <action
+            android:id="@+id/action_navigation_favourites_to_navigation_project"
+            app:destination="@+id/navigation_project"/>
+        <action
+            android:id="@+id/action_navigation_favourites_to_navigation_subproject"
+            app:destination="@+id/navigation_sub_project"/>
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.bbkiel.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_project"
+            app:destination="@id/navigation_project" />
+        <action
+            android:id="@+id/action_navigate_home_to_subproject"
+            app:destination="@+id/navigation_sub_project"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.bbkiel.ui.settings.SettingsFragment"
+        android:label="@string/title_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/navigation_project"
+        android:name="com.example.bbkiel.ui.project.ProjectFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_project">
+        <argument
+            android:name="title"
+            app:argType="string"
+            android:defaultValue="Project" />
+        <action
+            android:id="@+id/action_navigation_project_to_subproject"
+            app:destination="@id/navigation_sub_project" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_sub_project"
+        android:name="com.example.bbkiel.ui.project.SubProjectFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_sub_project">
+        <argument
+            android:name="title"
+            app:argType="string"
+            android:defaultValue="SubProject" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_districts"
+        android:name="com.example.bbkiel.ui.project.DistrictFragment"
+        android:label="@string/district"
+        tools:layout="@layout/fragment_district">
+    </fragment>
+</navigation>
+

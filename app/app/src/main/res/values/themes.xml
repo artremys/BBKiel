@@ -1,0 +1,28 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.BBKiel" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/kiel_fifth</item>
+        <item name="colorPrimaryVariant">@color/kiel_dark_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/kiel_light_blue</item>
+        <item name="colorSecondaryVariant">@color/kiel_third</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+<!--        <item name="android:fontFamily" tools:targetApi="l">serif-monospace</item>-->
+    </style>
+
+
+    <style name="Theme.BBKiel.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.BBKiel.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"></style>
+    <style name="Theme.BBKiel.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"></style>
+
+</resources>

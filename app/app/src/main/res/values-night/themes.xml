@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.BBKiel" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/kiel_dark_blue</item>
+        <item name="colorPrimaryVariant">@color/kiel_dark_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/kiel_third</item>
+        <item name="colorSecondaryVariant">@color/kiel_second</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+
+    </style>
+
+    <style name="CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="backgroundTint">#ffffff</item>
+    </style>
+</resources>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fadingEdge="none">
+-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        tools:context=".ui.project.ProjectFragment">
+
+        <!--        Placeholder for Project Image       -->
+    <ImageView
+        android:id="@+id/project_image"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:background="@color/white"
+        android:scaleType="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/im_tram"
+        tools:srcCompat="@drawable/im_tram">
+
+    </ImageView>
+        <!--        Information Box         -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/info_dump_project"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            app:contentPadding="10dp"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/project_image">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--        Current Phase of the Project         -->
+                <TextView
+                    android:id="@+id/current_phase"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/phase"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/phase_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="130dp"
+                    android:text="@string/placeholder"
+                    app:layout_constraintBaseline_toBaselineOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                </TextView>
+
+                <!--        Timeframe in which the Project is planned        -->
+                <TextView
+                    android:id="@+id/info_planned_period"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/period"
+                    app:layout_constraintBaseline_toBaselineOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/current_phase">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/createdAt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="130dp"
+                    android:text="@string/placeholder"
+                    app:layout_constraintBaseline_toBaselineOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/current_phase">
+
+                </TextView>
+
+                <!--        About the project         -->
+                <TextView
+                    android:id="@+id/textView3"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/information"
+                    app:layout_constraintBaseline_toBaselineOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/createdAt">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/info_dumb"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="130dp"
+                    android:text="@string/example_text"
+                    app:layout_constraintBaseline_toBaselineOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/createdAt">
+
+                </TextView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--    Tab View for Map and District views-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView_Tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/info_dump_project">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="48dp"
+                app:layout_anchor="@id/tabs"
+                app:layout_anchorGravity="bottom" />
+
+        </androidx.cardview.widget.CardView>
+    
+<!--    Auskommentiert weil Like, Favorisieren und Kommentieren bei Projekten nicht funktionen
+        <include
+            android:id="@+id/like_project"
+            layout="@layout/like_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/cardView_Tabs"
+            tools:layout_editor_absoluteX="5dp" />
+
+        <include
+            android:id="@+id/comment"
+            layout="@layout/comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/like_project" />
+-->
+
+
+    <Button
+        android:id="@+id/sub_Project_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="640dp"
+        android:text="SubProject"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--
+</ScrollView>
+-->

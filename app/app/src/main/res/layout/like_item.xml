@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:orientation="horizontal"
+    android:visibility="visible"
+    app:cardBackgroundColor="#FFFFFF"
+    app:cardCornerRadius="@dimen/card_corner_radius"
+    app:cardElevation="2dp"
+    app:contentPadding="1dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:outlineAmbientShadowColor="@color/black"
+        android:outlineProvider="paddedBounds"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/rating_discription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="90dp"
+            android:text="@string/ranking_text">
+
+        </TextView>
+
+        <ImageButton
+            android:id="@+id/like_project"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/rating_discription"
+            android:layout_marginStart="100dp"
+            android:contentDescription="like button"
+            app:srcCompat="@drawable/ic_like" />
+
+        <TextView
+            android:id="@+id/like_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/platzhalter">
+
+        </TextView>
+
+        <ImageButton
+            android:contentDescription="dislike button"
+            android:id="@+id/dislike_project"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/rating_discription"
+            android:layout_marginStart="200dp"
+            app:srcCompat="@drawable/ic_dislike" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
